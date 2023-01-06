@@ -1,0 +1,35 @@
+<html>
+  <body>
+    <h1>Welcome Voter!</h1>
+
+    <p>We need your support!!</p>
+      
+        <head>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+      function vote() {
+        var vote = prompt("铁汁投几票？");
+
+        $.post({
+          type: "POST",
+          url: "vote",
+          data: vote,
+          contentType: "application/text; charset=utf-8",
+          dataType: "json"
+        }).done(function(data) {
+          alert(data);
+        }).fail(function(data) {
+          alert("POST failed");
+        });
+      }
+        
+    </script>
+  </head>
+      
+   <p><img src="https://s4.aconvert.com/convert/p3r68-cdx67/aj4on-lzduk.svg" height="200" width="200"/></p>
+    <button onclick="vote()">SUPPORT</button>
+        <p><img src="https://s4.aconvert.com/convert/p3r68-cdx67/arlev-4cwpr.svg" height="200" width="200"/></p>
+      <button onclick="vote()">SUPPORT</button>
+      
+  </body>
+</html>
